@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BET ANALYST AI</title>
+<style>
+body {
+    margin: 0;
+    padding: 20px;
+    background: #101827;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+.container {
+    max-width: 600px;
+    margin: 40px auto;
+    background: #1e293b;
+    padding: 25px;
+    border-radius: 15px;
+}
+h1 {
+    color: #38bdf8;
+    text-align: center;
+}
+p {
+    color: #cbd5e1;
+}
+textarea {
+    width: 100%;
+    height: 120px;
+    box-sizing: border-box;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    margin: 15px 0;
+}
+button {
+    width: 100%;
+    padding: 15px;
+    background: #0284c7;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+}
+#result {
+    margin-top: 20px;
+    line-height: 1.6;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>BET ANALYST AI</h1>
+<p>Twój asystent analizy meczów piłkarskich</p>
+
+<textarea id="match" placeholder="Wpisz mecz, np. Real Madryt - Barcelona"></textarea>
+
+<button onclick="analyze()">ANALIZUJ MECZ</button>
+
+<div id="result"></div>
+</div>
+
+<script>
+function analyze() {
+    const match = document.getElementById("match").value.trim();
+    const result = document.getElementById("result");
+
+    if (!match) {
+        result.innerHTML = "Wpisz nazwę meczu!";
+        return;
+    }
+
+    result.innerHTML = `
+    <h3>Analiza: ${match}</h3>
+    <p>Moduł analityczny zostanie podłączony w kolejnym etapie.</p>
+    <p>Docelowo aplikacja będzie analizować statystyki, formę drużyn i prawdopodobieństwo wyników.</p>
+    `;
+}
+</script>
+</body>
+</html>
